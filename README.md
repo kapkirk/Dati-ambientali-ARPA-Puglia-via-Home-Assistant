@@ -66,8 +66,8 @@ Scopo principale di queste righe è quello di automatizzare l'acquisizione giorn
 
 1.Come già anticipato i dati sono acquisiti tramite le API pubbliche messe a disposizione dall'ARPA. Le centraline disponibili (datoa ggiornato al 29.1.2025) sono le seguenti:
 
-|id_station|             denominazione               |    comune    | indirizzo |rete   |interesse_rete|provincia    |   paese   |paese_esteso  |  Latitude    |Longitude     |    sorgente  |
-| -------- | --------------------------------------- | ------------ | --------- | ----- | ------------ | ----------- | --------- | ------------ | ------------ | ------------ | ------------ |
+|id_station|             denominazione                                |                       comune    | indirizzo               |rete   |interesse_rete|provincia    |   paese   |paese_esteso  |  Latitude    |Longitude     |    sorgente  |
+| -------- | -------------------------------------------------------- | ------------------------------- | ----------------------- | ----- | ------------ | ----------- | --------- | ------------ | ------------ | ------------ | ------------ |
 |8|Monte S. Angelo - Ciuffreda|Monte Sant Angelo|Suolo Ciuffreda|RRQA|PUBBLICO|Foggia|IT|Italy|15.945254|41.666109|ARPAP
 |10|Manfredonia - Mandorli|Manfredonia|Via dei Mandorli|RRQA|PUBBLICO|Foggia|IT|Italy|15.909638|41.629333|ARPAP
 |14|Molfetta - Verdi|Molfetta|P.zza Verdi|RRQA|PUBBLICO|Bari|IT|Italy|16.605253|41.201101|ARPAP
@@ -146,13 +146,13 @@ Scopo principale di queste righe è quello di automatizzare l'acquisizione giorn
 1. Particolare importanza assume l'individuazione dell'`id_station` perchè sarà, di fatto, l'unico dato da modificare nella stringa di lettura dei dati.
 1. La stringa di lettura è la seguente:
 
-   ![stringa1](https://dati.arpa.puglia.it/api/v1/measurements?language=ITA&format=CSV&network=RRQA&id_station=26&debugMode=false)
+   https://dati.arpa.puglia.it/api/v1/measurements?language=ITA&format=CSV&network=RRQA&id_station=26&debugMode=false
 
    può essere utilizzare anche nel normale browser. La sua consultazione genereràil download di un file che potrete leggere ed apprezzare soprattutto perchè per la centralina che avrete individuato, vi consentirà di sapere quali sono i dati pubblicati da ARPA.
 
 1. Sostituire l'`id_station` con quello della stazione desiderata:
 
-      ![stringa2](https://dati.arpa.puglia.it/api/v1/measurements?language=ITA&format=CSV&network=RRQA&id_station=) **26** ![stringa2](&debugMode=false)
+      `https://dati.arpa.puglia.it/api/v1/measurements?language=ITA&format=CSV&network=RRQA&`**id_station=26**`&debugMode=false`
 
 1. Provate la stringa e se la risposta è giusta (sarà di facile lettura) conservartela per inserirla nel giusto nodo NodeRED. 
 
@@ -162,7 +162,14 @@ Scopo principale di queste righe è quello di automatizzare l'acquisizione giorn
 
 1. Scaricare tutti i files;
 1. Copiare il contenuto di 'sensori HA.txt' in  `configuration.yaml`. Se la voce `mqtt:` è già presente, accodate i sensori a quelli già presenti;
+1. Potete aggiungere altri sensori se la centraline da voi scelte ne mostrano altri,vla configurazione è identica per tutti;
+1. La seguente configurazione esoprrà i sensori in HA come vedete di seguito:
 
+![lovelace](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/images/Esposizione%20HA.jpg)
+
+
+
+codice:
 ```yaml
 
 #*******************************************************
