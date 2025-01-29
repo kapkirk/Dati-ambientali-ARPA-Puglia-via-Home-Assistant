@@ -187,8 +187,12 @@ mqtt:
         } 
 ```
 
-1. Nella Dashbord della lovelace, dove preferite, aprite una nuova scheda ed incollate il codice del file `HA lovelace.txt`:
-   
+1. Nella Dashbord della lovelace, dove preferite, aprite una nuova scheda ed incollate il codice del file `HA lovelace.txt` ed il risultato sarà questo:
+
+[https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/images/Lovelace%20Visualizzazione%20HA.jpg]
+
+ecco il codice:
+
 ```yaml
 type: custom:flex-table-card
 title: Valori Ambientali San Pietro Vernotico
