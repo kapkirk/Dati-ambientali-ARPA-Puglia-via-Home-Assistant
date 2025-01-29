@@ -330,7 +330,7 @@ columns:
     data: classe_qualita
 ```
 
-### 3 - Configurazione di Node-RED
+### 4 - Configurazione di Node-RED
 
 1. Copiate ed incollate il contenuto del file `Flusso Node-RED singola centralina.json` oppure `Flusso Node-RED più centralina.json` in un foglio di NodeRED:
 
@@ -354,6 +354,11 @@ codice:
 ```
 1. Aprite il nodo denominato `http request` e nel campo `URL` copiate ed incollate la stringa ottenuta prima;
 1. Riavviate il tutto! Il gioco è fatto!
+
+---
+
+## Personalizzazione
+
 
 
 
