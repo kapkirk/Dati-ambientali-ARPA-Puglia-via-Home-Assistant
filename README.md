@@ -1,6 +1,6 @@
 # Welcome to My GitHub Profile!
 
-![Profile Banner](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/Ippolito%20SALATI.png)
+![Profile Banner](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/images/banner.png)
 
 Hi there! I'm kapkirk, a passionate developer always eager to learn and contribute to exciting projects.
 
