@@ -1,75 +1,58 @@
 # ARPA Puglia Environmental Data Integration
 
-Automazione per l'acquisizione di dati ambientali da ARPA Puglia via API, elaborazione con Node-RED e invio a Home Assistant via MQTT.
-
-## Struttura
-- `node-red-flows/`: Flussi Node-RED
-- `homeassistant-config/`: Configurazioni per Home Assistant
-- `docs/`: Guide di setup
-
-## Requisiti
-- Node-RED con nodi `node-red-contrib-mqtt` e `node-red-contrib-http-request`
-- Broker MQTT (es. Mosquitto)
-- Accesso alle API di ARPA Puglia
+**Scopo**: Automatizzare l'acquisizione giornaliera di dati ambientali dall'API di ARPA Puglia, elaborarli tramite Node-RED e integrarli in Home Assistant via MQTT per la visualizzazione in tempo reale.
 
 ---
 
-## Configurazione
+## Caratteristiche principali
 
-### Node-RED Flow (Esempio)
-```json
-[
-  {
-    "id": "1234567890",
-    "type": "tab",
-    "label": "ARPA Puglia Data",
-    "nodes": [
-      {
-        "id": "http-request",
-        "type": "http request",
-        "z": "1234567890",
-        "name": "Fetch ARPA Data",
-        "method": "GET",
-        "ret": "txt",
-        "url": "https://api.arpapuglia.it/dati_ambiente",  // Sostituire con l'URL reale
-        "tls": "",
-        "x": 300,
-        "y": 100
-      },
-      {
-        "id": "process-data",
-        "type": "function",
-        "z": "1234567890",
-        "name": "Converti per MQTT",
-        "func": "// Elabora i dati dall'API\nconst payload = {\n  temperature: msg.payload.temperatura,\n  pm10: msg.payload.pm10,\n  timestamp: new Date().toISOString()\n};\nmsg.payload = payload;\nreturn msg;",
-        "outputs": 1,
-        "x": 500,
-        "y": 100
-      },
-      {
-        "id": "mqtt-out",
-        "type": "mqtt out",
-        "z": "1234567890",
-        "name": "Invia a HA",
-        "topic": "arpa/puglia/data",
-        "qos": "0",
-        "retain": "false",
-        "broker": "mqtt-broker",  // Configurare il broker in Node-RED
-        "x": 700,
-        "y": 100
-      },
-      {
-        "id": "scheduler",
-        "type": "inject",
-        "z": "1234567890",
-        "name": "Ogni giorno alle 8:00",
-        "props": [],
-        "repeat": "86400",
-        "crontab": "00 08 * * *",
-        "once": true,
-        "x": 100,
-        "y": 100
-      }
-    ]
-  }
-]
+- **API Integration**: Collegamento diretto alle API di ARPA Puglia per il prelievo di parametri ambientali (es. qualità dell'aria, temperatura, umidità, PM10/PM2.5).
+- **Workflow Node-RED**: Flusso configurato per interrogare giornalmente le API, processare i dati (formattazione, validazione) e inviarli a un broker MQTT.
+- **Comunicazione MQTT**: Trasmissione sicura dei dati a Home Assistant tramite protocollo MQTT, con topic dedicati per ciascun sensore.
+- **Custom Sensor in Home Assistant**: Configurazione di sensori personalizzati in HA per ricevere i dati via MQTT e visualizzarli in dashboard (es. Lovelace UI).
+- **Automazione Giornaliera**: Schedulazione degli aggiornamenti per garantire dati sempre aggiornati senza intervento manuale.
+
+---
+
+## Funzionamento
+
+1. **Acquisizione Dati**:  
+   Node-RED effettua chiamate API periodiche ad ARPA Puglia e filtra i dati rilevanti.
+
+2. **Elaborazione**:  
+   I dati vengono convertiti in payload MQTT compatibili (es. JSON strutturato).
+
+3. **Invio a Home Assistant**:  
+   I payload sono pubblicati su un broker MQTT (es. Mosquitto) e ricevuti da HA tramite listener MQTT.
+
+4. **Creazione Sensori**:  
+   Script YAML in HA definiscono sensori che mappano i dati MQTT su entità utilizzabili (es. `sensor.temperatura_arpapuglia`).
+
+5. **Visualizzazione**:  
+   Integrazione in dashboard per monitoraggio ambientale centralizzato.
+
+---
+
+
+---
+
+## Prerequisiti
+
+- Node-RED installato e configurato con nodi:
+  - `node-red-contrib-mqtt`
+  - `node-red-contrib-http-request`
+- Broker MQTT (es. Mosquitto) in esecuzione e integrato con Home Assistant.
+- Accesso alle API di ARPA Puglia (credenziali/autorizzazioni richieste).
+
+---
+
+## Benefici
+
+Una soluzione replicabile per chiunque voglia monitorare dati ambientali ufficiali in Home Assistant, con flessibilità per:
+- Estendere i parametri acquisiti.
+- Modificare la schedulazione degli aggiornamenti.
+- Personalizzare dashboard e alert.
+
+---
+
+*Include template configurabili ed esempi pratici per un deploy rapido.*
