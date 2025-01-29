@@ -1,8 +1,8 @@
 # ARPA Puglia Environmental Data Integration
 
-Una utility [Home Assistant](https://home-assistant.io/) che ti aiuta a visualizzare i dati dei principali indicatori ambietali pubblicati da ARPA Puglia.
+Una utility [Home Assistant](https://home-assistant.io/) che ti aiuta a visualizzare i dati dei principali indicatori ambientali pubblicati da ARPA Puglia.
 
-Scopo principale di queste righe è quello di automatizzare l'acquisizione giornaliera di dati ambientali pubblicati tramite API dalla Agenzia Regoonale Protezione e Prevenzione Ambientale per la Puglia, la loro elaborazione tramite Node-RED e la successiva integrazione in Home Assistant tramite pubblicazione MQTT per la visualizzazione in tempo reale.
+Scopo principale di queste righe è quello di automatizzare l'acquisizione giornaliera di dati ambientali pubblicati tramite API dalla Agenzia Regionale Protezione e Prevenzione Ambientale per la Puglia, la loro elaborazione tramite Node-RED e la successiva integrazione in Home Assistant tramite pubblicazione MQTT per la visualizzazione in tempo reale.
 
 Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia.it/pagina2795_aria.html) secondo al [mappa](https://dati.arpa.puglia.it/qaria?footer=false%EF%BB%BF)
 
@@ -12,13 +12,13 @@ Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia
 
 - **API Integration**: Collegamento diretto alle API di ARPA Puglia per il prelievo di dei seguenti parametri ambientali:
      1.  **PM10** (Polveri inalabili, Insieme di sostanze solide e liquide con diametro inferiore a 10 micron. Derivano  da emissioni di autoveicoli, processi industriali, fenomeni naturali)
-     1.  **PM2.5** (Polveri respirabili, Insieme di sostanze solide e liquide con diametro inferiore a 2.5 micron. Derivano  da processi industriali, processi di combustione, emissionidi autoveicoli, fenomeni naturali)
+     1.  **PM2.5** (Polveri respirabili, Insieme di sostanze solide e liquide con diametro inferiore a 2.5 micron. Derivano  da processi industriali, processi di combustione, emissioni di autoveicoli, fenomeni naturali)
      3.  **NO2** (Biossido di azoto, Gas tossico che si forma nelle combustioni ad alta temperatura. Sue principali sorgenti sono i motori a scoppio, gli impianti termici, le centrali termoelettriche)
      4.  **SO2** (Biossido di zolfo, Gas irritante, si forma soprattutto in seguito all'utilizzo di combustibili (carbone, petrolio, gasolio) contenenti impurezze di zolfo)
      5.  **CO** (Monossido di Carbonio, Sostanza gassosa, si forma per combustione incompleta di materiale organico, ad esempio nei motori degli autoveicoli e nei processi industriali)
      6.  **C6H6** (Benzene, Liquido volatile e dall'odore dolciastro. Deriva dalla combustione incompleta del carbone e del petrolio, dai gas esausti dei veicoli a motore, dal fumo di tabacco)
      7.  **IPA** (Idrocarburi Policiclici Aromatici, Classe di composti organici semi-volatili, con 2 o più da anelli benzenici condensati tra loro, generati dalla combustione incompleta di materiale organico. Il dato fornito si riferisce agli IPA adsorbiti su particelle carboniose con un diametro aerodinamico tra 0.01 e 1 micron)
-     8.  **H2S** (Idrogeno solforato, Gas incolore dal caratteristico odore di uova marce, caratterizzato da una soglia olfattiva bassa.  E' generato nella produzione di carbon coke, nella lavorazione del petrolio,  di fertilizzanti, dei rifiutie di altri procedimenti industriali)
+     8.  **H2S** (Idrogeno solforato, Gas incolore dal caratteristico odore di uova marce, caratterizzato da una soglia olfattiva bassa.  E' generato nella produzione di carbon coke, nella lavorazione del petrolio,  di fertilizzanti, dei rifiuti e di altri procedimenti industriali)
      9.  **O3** (Ozono, Sostanza non emessa direttamente in atmosfera, si forma per reazione tra altri inquinanti, principalmente NO2 e idrocarburi, in presenza di radiazione solare)
      10.  **BLACK CARB** (Black Carbon, Prodotto della combustione incompleta di combustibili fossili e biomassa; può essere emesso da sorgenti naturali ed antropiche sotto forma di fuliggine)
      11. **Qualità dell'aria**
@@ -61,12 +61,12 @@ Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia
   - `node-red-contrib-mqtt`
   - `node-red-contrib-http-request`
 - Broker MQTT (es. Mosquitto) in esecuzione e integrato con Home Assistant.
-- Custom `flex-table-card` scaricabile da HACS installata e configurata (Se volete utilizzare la tabella di visualizzaizone come ho fatto io).
+- Custom `flex-table-card` scaricabile da HACS installata e configurata (Se volete utilizzare la tabella di visualizzazione come ho fatto io).
 
 
 ### 2 - Configurazione dei dati da acquisire
 
-1.Come già anticipato i dati sono acquisiti tramite le API pubbliche messe a disposizione dall'ARPA. Le centraline disponibili (datoa ggiornato al 29.1.2025) sono le seguenti:
+1.Come già anticipato i dati sono acquisiti tramite le API pubbliche messe a disposizione dall'ARPA. Le centraline disponibili (dato aggiornato al 29.1.2025) sono le seguenti:
 
 |id_station|             denominazione                                |                       comune    | indirizzo               |rete   |interesse_rete|provincia    |   paese   |paese_esteso  |  Latitude    |Longitude     |    sorgente  |
 | -------- | -------------------------------------------------------- | ------------------------------- | ----------------------- | ----- | ------------ | ----------- | --------- | ------------ | ------------ | ------------ | ------------ |
@@ -150,7 +150,7 @@ Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia
 
    https://dati.arpa.puglia.it/api/v1/measurements?language=ITA&format=CSV&network=RRQA&id_station=26&debugMode=false
 
-   può essere utilizzare anche nel normale browser. La sua consultazione genereràil download di un file che potrete leggere ed apprezzare soprattutto perchè per la centralina che avrete individuato, vi consentirà di sapere quali sono i dati pubblicati da ARPA.
+   può essere utilizzare anche nel normale browser. La sua consultazione genererà il download di un file che potrete leggere ed apprezzare soprattutto perchè per la centralina che avrete individuato, vi consentirà di sapere quali sono i dati pubblicati da ARPA.
 
 1. Sostituire l'`id_station` con quello della stazione desiderata:
 
@@ -164,8 +164,8 @@ Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia
 
 1. Scaricare tutti i files;
 1. Copiare il contenuto di 'sensori HA.txt' in  `configuration.yaml`. Se la voce `mqtt:` è già presente, accodate i sensori a quelli già presenti;
-1. Potete aggiungere altri sensori se la centraline da voi scelte ne mostrano altri,vla configurazione è identica per tutti;
-1. La seguente configurazione esoprrà i sensori in HA come vedete di seguito:
+1. Potete aggiungere altri sensori se la centraline da voi scelte ne mostrano altri, vla configurazione è identica per tutti;
+1. La seguente configurazione esporrà i sensori in HA come vedete di seguito:
 
 ![lovelace](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/images/Esposizione%20HA.jpg)
 
@@ -173,6 +173,8 @@ Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia
 
 codice:
 ```yaml
+
+# configuration.yaml
 
 #*******************************************************
 #                                                      *
@@ -295,7 +297,7 @@ mqtt:
         } 
 ```
 
-1. Nella Dashbord della lovelace, dove preferite, aprite una nuova scheda ed incollate il codice del file `HA lovelace.txt` ed il risultato sarà questo:
+1. Nella _Dashbord_ della _lovelace_, dove preferite, aprite una nuova scheda ed incollate il codice del file `HA lovelace.txt` ed il risultato sarà questo:
 
 ![lovelace](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/images/Lovelace%20Visualizzazione%20HA.jpg)
 
@@ -368,17 +370,21 @@ codice:
 [{"id":"10c547891c3baf9e","type":"function","z":"83ae842a038866d3","name":"divide i messaggi per ogni inquinante","func":"// Ottieni l'array dal payload\nlet misurazioni = msg.payload;\n\n// Verifica che ci siano almeno due elementi nell'array\nif (misurazioni.length >= 7) {\n    // Crea due messaggi separati\n    let msg1 = { payload: misurazioni[0] }; // Primo oggetto\n    let msg2 = { payload: misurazioni[1] }; // Secondo oggetto\n    let msg3 = { payload: misurazioni[2] }; // Terzo oggetto\n    let msg4 = { payload: misurazioni[3] }; // Quarto oggetto\n    let msg5 = { payload: misurazioni[4] }; // Quinto oggetto\n    let msg6 = { payload: misurazioni[5] }; // Sesto oggetto\n    let msg7 = { payload: misurazioni[6] }; // settimo oggetto\n    let msg8 = { payload: misurazioni[7] }; // ottavo oggetto\n    let msg9 = { payload: misurazioni[8] }; // nono oggetto\n\n    // Restituisci entrambi i messaggi\n    return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9];\n} else {\n    // Se non ci sono abbastanza elementi, restituisci un messaggio di errore\n    msg.payload = \"Errore: Il payload non contiene abbastanza elementi.\";\n    return msg;\n}","outputs":9,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":870,"y":380,"wires":[["c78bf7f00a9df94f"],["a92129cd90dbb91c"],["baacb7b203c98073"],["2019bc966017df5c"],["9f95695360a832b5"],["bd3b68228abce048"],["6a89ae6b2939c5f3"],["919b7562c0f30678"],["82a6fa3f55689262"]],"info":"### ## # "}]
 ```
 
+---
+
 **Commentiamolo:**
-1. Tramite una chiamata giornaliera alle ore 12.00 lancio l'aggiornamento dei sensori (le rilevazioni sono aggiornate al giorno precedente, quindi non ha senso riperterla più volte al giorno) tramite il nodo `inject`;
+--
+
+1. Tramite una chiamata giornaliera alle ore 12.00 lancio l'aggiornamento dei sensori (le rilevazioni sono aggiornate al giorno precedente, quindi non ha senso ripeterla più volte al giorno) tramite il nodo `inject`;
 2. Il successivo nodo `http request` è il nodo che invia la stringa per la chiamata dei dati, personalizzabile come detto prima;
 3. Il nodo `csv` riceve i dati e li interpreta suddividendoli;
 4. Il nodo `function` che segue, denominato `Estrae i dati delle misurazioni`, suddivide l'_array_ ricevuto in stringhe separate producendo più _payload_ per quante sono le righe trasmesse dalla centralina.
-     Qui interviene l'ultiore personalizzazione, come faccio a sapere quali inquinanti espone una centralina? La risposta non è complessa:
+     Qui interviene l'ulteriore personalizzazione, come faccio a sapere quali inquinanti espone una centralina? La risposta non è complessa:
      1. andare sul sito dei [dati ARPA](https://dati.arpa.puglia.it/openapi/index.html)
      2. scorrere fino alla Sezione `Misurazioni`
-     3. cliccare sul successivo tsato `GET`
+     3. cliccare sul successivo tasto `GET`
      4. poi cliccare sulla destra sul tasto `TRY IT OUT`
-     5. inserite nel campo `format` il formato dei dati, vi consiglio `csv` per una maggiore intellegilbilità
+     5. inserite nel campo `format` il formato dei dati, vi consiglio `csv` per una maggiore intellegibilità
      6. inserite nel campo `id-station` il numero identificativo della centralina che vi interessa, ad esempio `104`
      7. cliccare su `debug-mode` ed impostare a `true` così da avere la risposta a video (non cambia nulla, se lasciate l'impostazione si  `false` vi scaricherà un file di testo con i dati)
      8. quindi cliccare si `Execute`
@@ -426,7 +432,7 @@ ovviamente poi modificheremo anche il successivo messaggio di  `return` del _pay
           return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9];` 
 ```
 
-in questo modo avremo una uscita per ogni inquinante a cui collegheremo, nello stesso ordine mostrato dall'API, il canale MQTT tramite il nodo `mqtt out`. I nodi, per maggiore chiarezza e celerità, li ho denominati così come previsto dalla sigla pbeve utilizzata nella stessa API regionale.
+in questo modo avremo una uscita per ogni inquinante a cui collegheremo, nello stesso ordine mostrato dall'API, il canale MQTT tramite il nodo `mqtt out`. I nodi, per maggiore chiarezza e celerità, li ho denominati così come previsto dalla sigla breve utilizzata nella stessa API regionale.
 6. Prima di arrivare alla pubblicazione del dato in `MQTT` ho dovuto inserire un nuovo nodo `function` denominato `formatta in valore "valore" in caso di errore` che ha lo scopo di sostituire i dati non pervenuti, esposti dalle API con la dicitura `null`, con il numero `0`. Questo si è reso necessario perchè altrimenti Home Assistant non è in grado di interpetrare il dato restituendo così un errore generale del sensore che non esporrà nulla.
 7. L'ultima cosa è quindi la configurazione dei relativi sensori in Home Assistant, la struttura è identica per tutti, va cambiato solo il nome del sensore nel campo `name` ed il canale mqtt nel campo `json_attributes_topic:`, null'altro:
 
