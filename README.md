@@ -357,8 +357,101 @@ codice:
 
 ---
 
-## Personalizzazione
+## Personalizzazione ed analisi dei flussi NodeRED
 
+I flussi da me illustrati sono ovviamente meritevoli di sviluppo. Personalmente mi sono occupato di raccogliere i dati esposti dalle centraline vicine alle zone in cui abito ma ciò non toglie che si possano utilizzare tutti i valori a disposizione, ovvero quelli esposti nella tabella "Caratteristiche principali" sopra riportata. Il flusso NodeRED in questo caso sarà il seguente:
 
+![nodered3](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/images/Flusso%20Node-RED%20centralina%20completa.jpg)
 
+codice:
+```json
+[{"id":"10c547891c3baf9e","type":"function","z":"83ae842a038866d3","name":"divide i messaggi per ogni inquinante","func":"// Ottieni l'array dal payload\nlet misurazioni = msg.payload;\n\n// Verifica che ci siano almeno due elementi nell'array\nif (misurazioni.length >= 7) {\n    // Crea due messaggi separati\n    let msg1 = { payload: misurazioni[0] }; // Primo oggetto\n    let msg2 = { payload: misurazioni[1] }; // Secondo oggetto\n    let msg3 = { payload: misurazioni[2] }; // Terzo oggetto\n    let msg4 = { payload: misurazioni[3] }; // Quarto oggetto\n    let msg5 = { payload: misurazioni[4] }; // Quinto oggetto\n    let msg6 = { payload: misurazioni[5] }; // Sesto oggetto\n    let msg7 = { payload: misurazioni[6] }; // settimo oggetto\n    let msg8 = { payload: misurazioni[7] }; // ottavo oggetto\n    let msg9 = { payload: misurazioni[8] }; // nono oggetto\n\n    // Restituisci entrambi i messaggi\n    return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9];\n} else {\n    // Se non ci sono abbastanza elementi, restituisci un messaggio di errore\n    msg.payload = \"Errore: Il payload non contiene abbastanza elementi.\";\n    return msg;\n}","outputs":9,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":870,"y":380,"wires":[["c78bf7f00a9df94f"],["a92129cd90dbb91c"],["baacb7b203c98073"],["2019bc966017df5c"],["9f95695360a832b5"],["bd3b68228abce048"],["6a89ae6b2939c5f3"],["919b7562c0f30678"],["82a6fa3f55689262"]],"info":"### ## # "}]
+```
+
+**Commentiamolo:**
+1. Tramite una chiamata giornaliera alle ore 12.00 lancio l'aggiornamento dei sensori (le rilevazioni sono aggiornate al giorno precedente, quindi non ha senso riperterla più volte al giorno) tramite il nodo `inject`;
+2. Il successivo nodo `http request` è il nodo che invia la stringa per la chiamata dei dati, personalizzabile come detto prima;
+3. Il nodo `csv` riceve i dati e li interpreta suddividendoli;
+4. Il nodo `function` che segue, denominato `Estrae i dati delle misurazioni`, suddivide l'_array_ ricevuto in stringhe separate producendo più _payload_ per quante sono le righe trasmesse dalla centralina.
+     Qui interviene l'ultiore personalizzazione, come faccio a sapere quali inquinanti espone una centralina? La risposta non è complessa:
+     1. andare sul sito dei [dati ARPA](https://dati.arpa.puglia.it/openapi/index.html)
+     2. scorrere fino alla Sezione `Misurazioni`
+     3. cliccare sul successivo tsato `GET`
+     4. poi cliccare sulla destra sul tasto `TRY IT OUT`
+     5. inserite nel campo `format` il formato dei dati, vi consiglio `csv` per una maggiore intellegilbilità
+     6. inserite nel campo `id-station` il numero identificativo della centralina che vi interessa, ad esempio `104`
+     7. cliccare su `debug-mode` ed impostare a `true` così da avere la risposta a video (non cambia nulla, se lasciate l'impostazione si  `false` vi scaricherà un file di testo con i dati)
+     8. quindi cliccare si `Execute`
+     9. dopo pochi secondi otterrete la seguente risposta:
+        il link per ottenere i dati, nel caso che ci occupa, sarà:
+
+                                 https://dati.arpa.puglia.it/api/v1/measurements?language=ITA&format=CSV&id_station=104&debugMode=true
+
+        Nella successiva sezione `Response body` potremo leggere i seguenti dati:
+```yaml
+         <pre>=== measurements/executeQuery ===
+formatParam: CSV
+=== measurements/executeQuery ===
+<pre>data_di_misurazione,id_station,denominazione,comune,provincia,Longitude,Latitude,tipologia_di_area,tipologia_di_stazione,rete,interesse_rete,id_pollutant,inquinante_misurato,valore_inquinante_misurato,limite,unita_misura,superamenti,indice_qualita,classe_qualita
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","13","PM10",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","12","PM2.5",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","4","NO2",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","2","C6H6",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","1","CO",null,null,"mg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","6","SO2",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","8","H2S",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","10","BLACK CARB",null,null,"ng/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","11","IPA",null,null,"ng/m³",null,null,null
+```
+
+   
+5. Il nodo `function` che segue, denominato `divide i messaggi per ogni inquinante`, è dotate di tante uscite quanti sono le righe dell'_array_ ricevuto. Quindi se una centralina espone 6 inquinanti, bisognerà modificarlo come segue:
+   Nella Scheda `setup` va modificato il numero delle uscite che sarà uguale al numero degli inquinanti esposti;
+   Nella Scheda `on message` va inserita una striga `let msg1 = { payload: misurazioni[0] };` per ogni inquinante esposto, così ad esempio:
+```yaml
+              let msg1 = { payload: misurazioni[0] }; // Primo oggetto
+              let msg2 = { payload: misurazioni[1] }; // Secondo oggetto
+              let msg3 = { payload: misurazioni[2] }; // Terzo oggetto
+              let msg4 = { payload: misurazioni[3] }; // Quarto oggetto
+              let msg5 = { payload: misurazioni[4] }; // Quinto oggetto
+              let msg6 = { payload: misurazioni[5] }; // Sesto oggetto
+              let msg7 = { payload: misurazioni[6] }; // settimo oggetto
+              let msg8 = { payload: misurazioni[7] }; // ottavo oggetto
+              let msg9 = { payload: misurazioni[8] }; // nono oggetto
+```
+
+ovviamente poi modificheremo anche il successivo messaggio di  `return` del _payload_ ottenendo quindi:
+
+```yaml 
+          return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9];` 
+```
+
+in questo modo avremo una uscita per ogni inquinante a cui collegheremo, nello stesso ordine mostrato dall'API, il canale MQTT tramite il nodo `mqtt out`. I nodi, per maggiore chiarezza e celerità, li ho denominati così come previsto dalla sigla pbeve utilizzata nella stessa API regionale.
+6. Prima di arrivare alla pubblicazione del dato in `MQTT` ho dovuto inserire un nuovo nodo `function` denominato `formatta in valore "valore" in caso di errore` che ha lo scopo di sostituire i dati non pervenuti, esposti dalle API con la dicitura `null`, con il numero `0`. Questo si è reso necessario perchè altrimenti Home Assistant non è in grado di interpetrare il dato restituendo così un errore generale del sensore che non esporrà nulla.
+7. L'ultima cosa è quindi la configurazione dei relativi sensori in Home Assistant, la struttura è identica per tutti, va cambiato solo il nome del sensore nel campo `name` ed il canale mqtt nel campo `json_attributes_topic:`, null'altro:
+
+ ```yaml
+
+#_configuration.yaml_
+
+mqtt:
+  sensor:
+    - name: "NO2"
+      state_topic: "sensors/no2"
+      unit_of_measurement: "µg/m³"
+      value_template: "{{ value_json.valore }}"
+      json_attributes_topic: "sensors/no2"
+      json_attributes_template: >
+        {
+          "data": "{{ value_json.data }}",
+          "inquinante": "{{ value_json.inquinante }}",
+          "limite": {{ value_json.limite }},
+          "unita": "{{ value_json.unita }}",
+          "indice_qualita": "{{ value_json.indice_qualita }}",
+          "classe_qualita": "{{ value_json.classe_qualita }}",
+          "superamenti": {{ value_json.superamenti }}
+        }
+```
+
+8. Lavoro finito e buon divertimento a tutti!
 
