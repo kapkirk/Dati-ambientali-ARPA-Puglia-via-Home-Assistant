@@ -1,0 +1,123 @@
+
+#*******************************************************
+#                                                      *
+#                    Sensori qualità ambiente          *
+#                                                      *
+#*******************************************************
+
+mqtt:
+  sensor:
+    - name: "NO2"
+      state_topic: "sensors/no2"
+      unit_of_measurement: "µg/m³"
+      value_template: "{{ value_json.valore }}"
+      json_attributes_topic: "sensors/no2"
+      json_attributes_template: >
+        {
+          "data": "{{ value_json.data }}",
+          "inquinante": "{{ value_json.inquinante }}",
+          "limite": {{ value_json.limite }},
+          "unita": "{{ value_json.unita }}",
+          "indice_qualita": "{{ value_json.indice_qualita }}",
+          "classe_qualita": "{{ value_json.classe_qualita }}",
+          "superamenti": {{ value_json.superamenti }}
+        }
+
+    - name: "PM10"
+      state_topic: "sensors/pm10"
+      unit_of_measurement: "µg/m³"
+      value_template: "{{ value_json.valore }}"
+      json_attributes_topic: "sensors/pm10"
+      json_attributes_template: >
+        {
+          "data": "{{ value_json.data }}",
+          "inquinante": "{{ value_json.inquinante }}",
+          "limite": {{ value_json.limite }},
+          "unita": "{{ value_json.unita }}",
+          "indice_qualita": "{{ value_json.indice_qualita }}",
+          "classe_qualita": "{{ value_json.classe_qualita }}",
+          "superamenti": {{ value_json.superamenti }}
+        } 
+
+    - name: "PM25"
+      state_topic: "sensors/pm25"
+      unit_of_measurement: "µg/m³"
+      value_template: "{{ value_json.valore }}"
+      json_attributes_topic: "sensors/pm25"
+      json_attributes_template: >
+        {
+          "data": "{{ value_json.data }}",
+          "inquinante": "{{ value_json.inquinante }}",
+          "limite": {{ value_json.limite }},
+          "unita": "{{ value_json.unita }}",
+          "indice_qualita": "{{ value_json.indice_qualita }}",
+          "classe_qualita": "{{ value_json.classe_qualita }}",
+          "superamenti": {{ value_json.superamenti }}
+        }         
+        
+    - name: "SO2"
+      state_topic: "sensors/so2"
+      unit_of_measurement: "µg/m³"
+      value_template: "{{ value_json.valore }}"
+      json_attributes_topic: "sensors/so2"
+      json_attributes_template: >
+        {
+          "data": "{{ value_json.data }}",
+          "inquinante": "{{ value_json.inquinante }}",
+          "limite": {{ value_json.limite }},
+          "unita": "{{ value_json.unita }}",
+          "indice_qualita": "{{ value_json.indice_qualita }}",
+          "classe_qualita": "{{ value_json.classe_qualita }}",
+          "superamenti": {{ value_json.superamenti }}
+        }         
+        
+    - name: "C6H6"
+      state_topic: "sensors/c6h6"
+      unit_of_measurement: "µg/m³"
+      value_template: "{{ value_json.valore }}"
+      json_attributes_topic: "sensors/c6h6"
+      json_attributes_template: >
+        {
+          "data": "{{ value_json.data }}",
+          "inquinante": "{{ value_json.inquinante }}",
+          "limite": {{ value_json.limite }},
+          "unita": "{{ value_json.unita }}",
+          "indice_qualita": "{{ value_json.indice_qualita }}",
+          "classe_qualita": "{{ value_json.classe_qualita }}",
+          "superamenti": {{ value_json.superamenti }}
+        }         
+        
+    - name: "CO"
+      state_topic: "sensors/co"
+      unit_of_measurement: "µg/m³"
+      value_template: "{{ value_json.valore }}"
+      json_attributes_topic: "sensors/co"
+      json_attributes_template: >
+        {
+          "data": "{{ value_json.data }}",
+          "inquinante": "{{ value_json.inquinante }}",
+          "limite": {{ value_json.limite }},
+          "unita": "{{ value_json.unita }}",
+          "indice_qualita": "{{ value_json.indice_qualita }}",
+          "classe_qualita": "{{ value_json.classe_qualita }}",
+          "superamenti": {{ value_json.superamenti }}
+        } 
+        
+    - name: "IPA"
+      state_topic: "sensors/ipa"
+      unit_of_measurement: "µg/m³"
+      value_template: "{{ value_json.valore }}"
+      json_attributes_topic: "sensors/ipa"
+      json_attributes_template: >
+        {
+          "data": "{{ value_json.data }}",
+          "inquinante": "{{ value_json.inquinante }}",
+          "limite": {{ value_json.limite }},
+          "unita": "{{ value_json.unita }}",
+          "indice_qualita": "{{ value_json.indice_qualita }}",
+          "classe_qualita": "{{ value_json.classe_qualita }}",
+          "superamenti": {{ value_json.superamenti }}
+        } 
+
+        
+        
