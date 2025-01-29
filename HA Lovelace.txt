@@ -1,0 +1,27 @@
+type: custom:flex-table-card
+title: Valori Ambientali San Pietro Vernotico
+entities:
+  include:
+    - sensor.pm10
+    - sensor.pm25
+    - sensor.no2
+    - sensor.so2
+    - sensor.co
+    - sensor.c6h6
+    - sensor.ipa
+  sort_by: name
+columns:
+  - name: Inquinante
+    data: inquinante
+  - name: Valore
+    data: state
+  - name: Unita
+    data: unita
+  - name: Limite
+    data: limite
+  - name: Superamenti
+    data: superamenti
+  - name: Indice qualità
+    data: indice_qualita
+  - name: Classe qualità
+    data: classe_qualita
