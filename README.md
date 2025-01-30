@@ -1,7 +1,7 @@
-|[italiano](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#acquisizione-dati-inquinanti-ambietali-arpa-puglia-in-home-assistant)| [inglese](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#arpa-puglia-environmental-data-integration-1)|
+| [italiano](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#acquisizione-dati-inquinanti-ambientali-arpa-puglia-in-home-assistant) | [inglese](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#arpa-puglia-environmental-data-integration-1) |
 
 ---
-# Acquisizione dati inquinanti ambietali ARPA Puglia in Home Assistant
+# Acquisizione dati inquinanti ambientali ARPA Puglia in Home Assistant
 
 
 Una utility [Home Assistant](https://home-assistant.io/) che ti aiuta a visualizzare i dati dei principali indicatori ambientali pubblicati da ARPA Puglia.
