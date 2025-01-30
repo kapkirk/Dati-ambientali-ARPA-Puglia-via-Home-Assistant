@@ -1,10 +1,10 @@
 | [italiano](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#acquisizione-dati-inquinanti-ambientali-arpa-puglia-in-home-assistant) | [inglese](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#arpa-puglia-environmental-pollutant-data-acquisition-in-home-assistant) |
 
+![](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/images/HA%20logo2.png)  `                                ` ![](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/images/Node-RED.png)
 ---
 # Acquisizione dati inquinanti ambientali ARPA Puglia in Home Assistant
 
-
-Una utility [Home Assistant](https://home-assistant.io/) che ti aiuta a visualizzare i dati dei principali indicatori ambientali pubblicati da ARPA Puglia.
+Una utility [Home Assistant](https://home-assistant.io/) che ti aiuta a visualizzare i dati dei principali indicatori ambientali pubblicati da ARPA Puglia utilizzando [Node-RED](https://nodered.org/).
 
 <br>
 
@@ -497,7 +497,7 @@ mqtt:
 # ARPA Puglia environmental pollutant data acquisition in Home Assistant
 
 
-A [Home Assistant](https://home-assistant.io/) utility that helps you visualize the data of the main environmental indicators published by ARPA Puglia.
+A [Home Assistant](https://home-assistant.io/) utility that helps you visualize the data of the main environmental indicators published by ARPA Puglia via [Node-RED](https://nodered.org/).
 
 <br>
 
