@@ -1,0 +1,13 @@
+version: 1
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 50
+  target-branch: master
+  assignees:
+  - kapkirk
+  labels:
+  - dependencies
