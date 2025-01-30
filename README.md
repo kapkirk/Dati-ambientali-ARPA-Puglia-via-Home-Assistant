@@ -1,4 +1,4 @@
-| [italiano](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/tree/main?tab=readme-ov-file#acquisizione-dati-inquinanti-ambientali-arpa-puglia-in-home-assistant) | [inglese](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#arpa-puglia-environmental-data-integration) |
+| [italiano](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/tree/main?tab=readme-ov-file#acquisizione-dati-inquinanti-ambientali-arpa-puglia-in-home-assistant) | [inglese](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#arpa-puglia-environmental-pollutant-data-acquisition-in-home-assistant) |
 
 ---
 # Acquisizione dati inquinanti ambientali ARPA Puglia in Home Assistant
@@ -503,21 +503,21 @@ A [Home Assistant](https://home-assistant.io/) utility that helps you visualize 
 
 ## Table of Contents
 
-1. **[Project Description](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#descrizione-del-progetto)**
+1. **[Project Description](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#project-description)**
 
-2. **[Key Features](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#caratteristiche-principali)**
+2. **[Key Features](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#key-features)**
 
-3. **[Operation Description](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#descrizione-del-funzionamento)**
+3. **[Operation Description](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#description-of-operation)**
 
-4. **[Installation](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#installazione)**
-   1. **[Prerequisites](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#1---prerequisiti)**
-   1. **[Configuring the Data to Be Captured](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#2---configurazione-dei-dati-da-acquisire)**
-   1. **[Home Assistant Setup](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#3---configurazione-home-assistant)**
-   2. **[Configuring Node-RED](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#4---configurazione-di-node-red)**
+4. **[Installation](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#installation)**
+   1. **[Prerequisites](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#1---prerequisites)**
+   1. **[Configuring the Data to Be Captured](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#2---configuring-the-data-to-be-captured)**
+   1. **[Home Assistant Setup](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#3---home-assistant-setup)**
+   2. **[Configuring Node-RED](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#4---configuring-node-red)**
 
-5. **[Customizing NodeRed Flows](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#personalizzazione-ed-analisi-dei-flussi-nodered)**
+5. **[Customizing NodeRed Flows](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#customization-and-analysis-of-nodered-flows)**
 
-6. **[Code Comment](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/edit/main/README.md#commentiamolo)**  
+6. **[Code Comment](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#lets-comment-on-it)**  
  
 
  
