@@ -1,4 +1,4 @@
-| [italiano](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/tree/main?tab=readme-ov-file#acquisizione-dati-inquinanti-ambientali-arpa-puglia-in-home-assistant) | [inglese](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/tree/main?tab=readme-ov-file#arpa-puglia-environmental-data-integration-1) |
+| [italiano](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/tree/main?tab=readme-ov-file#acquisizione-dati-inquinanti-ambientali-arpa-puglia-in-home-assistant) | [inglese](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant#arpa-puglia-environmental-data-integration) |
 
 ---
 # Acquisizione dati inquinanti ambientali ARPA Puglia in Home Assistant
