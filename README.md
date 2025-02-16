@@ -41,19 +41,19 @@ Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia
 ## Caratteristiche principali
 
 - **API Integration**: Collegamento diretto alle API di ARPA Puglia per il prelievo di dei seguenti parametri ambientali:
-     1.  **PM10** (Polveri inalabili, Insieme di sostanze solide e liquide con diametro inferiore a 10 micron. Derivano  da emissioni di autoveicoli, processi industriali, fenomeni naturali)
-     1.  **PM2.5** (Polveri respirabili, Insieme di sostanze solide e liquide con diametro inferiore a 2.5 micron. Derivano  da processi industriali, processi di combustione, emissioni di autoveicoli, fenomeni naturali)
-     3.  **NO2** (Biossido di azoto, Gas tossico che si forma nelle combustioni ad alta temperatura. Sue principali sorgenti sono i motori a scoppio, gli impianti termici, le centrali termoelettriche)
-     4.  **SO2** (Biossido di zolfo, Gas irritante, si forma soprattutto in seguito all`utilizzo di combustibili (carbone, petrolio, gasolio) contenenti impurezze di zolfo)
-     5.  **CO** (Monossido di Carbonio, Sostanza gassosa, si forma per combustione incompleta di materiale organico, ad esempio nei motori degli autoveicoli e nei processi industriali)
-     6.  **C6H6** (Benzene, Liquido volatile e dall`odore dolciastro. Deriva dalla combustione incompleta del carbone e del petrolio, dai gas esausti dei veicoli a motore, dal fumo di tabacco)
-     7.  **IPA** (Idrocarburi Policiclici Aromatici, Classe di composti organici semi-volatili, con 2 o più da anelli benzenici condensati tra loro, generati dalla combustione incompleta di materiale organico. Il dato fornito si riferisce agli IPA adsorbiti su particelle carboniose con un diametro aerodinamico tra 0.01 e 1 micron)
-     8.  **H2S** (Idrogeno solforato, Gas incolore dal caratteristico odore di uova marce, caratterizzato da una soglia olfattiva bassa.  E` generato nella produzione di carbon coke, nella lavorazione del petrolio,  di fertilizzanti, dei rifiuti e di altri procedimenti industriali)
-     9.  **O3** (Ozono, Sostanza non emessa direttamente in atmosfera, si forma per reazione tra altri inquinanti, principalmente NO2 e idrocarburi, in presenza di radiazione solare)
-     10.  **BLACK CARB** (Black Carbon, Prodotto della combustione incompleta di combustibili fossili e biomassa; può essere emesso da sorgenti naturali ed antropiche sotto forma di fuliggine)
+     1.  **PM10** (Polveri inalabili. Insieme di sostanze solide e liquide con diametro inferiore a 10 micron. Derivano  da emissioni di autoveicoli, processi industriali, fenomeni naturali)
+     1.  **PM2.5** (Polveri respirabili. Insieme di sostanze solide e liquide con diametro inferiore a 2.5 micron. Derivano  da processi industriali, processi di combustione, emissioni di autoveicoli, fenomeni naturali)
+     3.  **NO2** (Biossido di azoto. Gas tossico che si forma nelle combustioni ad alta temperatura. Sue principali sorgenti sono i motori a scoppio, gli impianti termici, le centrali termoelettriche)
+     4.  **SO2** (Biossido di zolfo. Gas irritante, si forma soprattutto in seguito all`utilizzo di combustibili (carbone, petrolio, gasolio) contenenti impurezze di zolfo)
+     5.  **CO** (Monossido di Carbonio. Sostanza gassosa, si forma per combustione incompleta di materiale organico, ad esempio nei motori degli autoveicoli e nei processi industriali)
+     6.  **C6H6** (Benzene. Liquido volatile e dall`odore dolciastro. Deriva dalla combustione incompleta del carbone e del petrolio, dai gas esausti dei veicoli a motore, dal fumo di tabacco)
+     7.  **IPA** (Idrocarburi Policiclici Aromatici. Classe di composti organici semi-volatili, con 2 o più da anelli benzenici condensati tra loro, generati dalla combustione incompleta di materiale organico. Il dato fornito si riferisce agli IPA adsorbiti su particelle carboniose con un diametro aerodinamico tra 0.01 e 1 micron)
+     8.  **H2S** (Idrogeno solforato. Gas incolore dal caratteristico odore di uova marce, caratterizzato da una soglia olfattiva bassa.  E` generato nella produzione di carbon coke, nella lavorazione del petrolio,  di fertilizzanti, dei rifiuti e di altri procedimenti industriali)
+     9.  **O3** (Ozono. Sostanza non emessa direttamente in atmosfera, si forma per reazione tra altri inquinanti, principalmente NO2 e idrocarburi, in presenza di radiazione solare)
+     10.  **BLACK CARB** (Black Carbon. Prodotto della combustione incompleta di combustibili fossili e biomassa; può essere emesso da sorgenti naturali ed antropiche sotto forma di fuliggine)
      11. **Qualità dell`aria**
 
-**Disclaimer**: Non tutte le centraline espongono tutti i dati, pertanto, ho deciso di pubblicare due flussi di node-red da porter poi integrare con i dati eventualmente recuperati direttamente dal sito ARPA di accesso alle loro API: 
+**Disclaimer**: Non tutte le centraline espongono tutti i dati, pertanto, ho deciso di pubblicare due flussi di node-red da poter poi integrare con i dati eventualmente recuperati direttamente dal sito ARPA di accesso alle loro API: 
 
 [API_Regione_Puglia](https://dati.arpa.puglia.it/openapi/index.html)
 
@@ -194,7 +194,7 @@ Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia
 
 1. Scaricare tutti i files;
 1. Copiare il contenuto di `sensori HA.txt` in  `configuration.yaml`. Se la voce `mqtt:` è già presente, accodate i sensori a quelli già presenti;
-1. Potete aggiungere altri sensori se la centraline da voi scelte ne mostrano altri, vla configurazione è identica per tutti;
+1. Potete aggiungere altri sensori rekativi agli inquinanti se la centraline da voi scelte ne espongono di diversi, la configurazione è identica per tutti, basta cambiare il nome;
 1. La seguente configurazione esporrà i sensori in HA come vedete di seguito:
 
 ![lovelace](https://github.com/kapkirk/Dati-ambientali-ARPA-Puglia-via-Home-Assistant/blob/main/images/Esposizione%20HA.jpg)
