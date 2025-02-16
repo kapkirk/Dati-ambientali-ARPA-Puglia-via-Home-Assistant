@@ -416,12 +416,13 @@ codice:
      4. poi cliccare sulla destra sul tasto `TRY IT OUT`
      5. inserite nel campo `format` il formato dei dati, vi consiglio `csv` per una maggiore intellegibilità
      6. inserite nel campo `id-station` il numero identificativo della centralina che vi interessa, ad esempio `104`
-     7. cliccare su `debug-mode` ed impostare a `true` così da avere la risposta a video (non cambia nulla, se lasciate l`impostazione si  `false` vi scaricherà un file di testo con i dati)
-     8. quindi cliccare si `Execute`
+     7. cliccare su `debug-mode` ed impostare a `true` così da avere la risposta a video (non cambia nulla, se lasciate l`impostazione su  `false` vi scaricherà un file di testo con i dati)
+     8. quindi cliccare su `Execute`
      9. dopo pochi secondi otterrete la seguente risposta:
         il link per ottenere i dati, nel caso che ci occupa, sarà:
 
-                                 https://dati.arpa.puglia.it/api/v1/measurements?language=ITA&format=CSV&id_station=104&debugMode=true
+
+                                 `https://dati.arpa.puglia.it/api/v1/measurements?language=ITA&format=CSV&id_station=104&debugMode=true`
 
         Nella successiva sezione `Response body` potremo leggere i seguenti dati:
 ```yaml
