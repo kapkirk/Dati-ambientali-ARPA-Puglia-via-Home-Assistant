@@ -409,7 +409,7 @@ codice:
 2. Il successivo nodo `http request` è il nodo che invia la stringa per la chiamata dei dati, personalizzabile come detto prima;
 3. Il nodo `csv` riceve i dati e li interpreta suddividendoli;
 4. Il nodo `function` che segue, denominato `Estrae i dati delle misurazioni`, suddivide l`_array_ ricevuto in stringhe separate producendo più _payload_ per quante sono le righe trasmesse dalla centralina.
-     Qui interviene l`ulteriore personalizzazione, come faccio a sapere quali inquinanti espone una centralina? La risposta non è complessa:
+     Qui interviene una ulteriore personalizzazione, come faccio a sapere quali inquinanti espone una centralina? La risposta non è complessa:
      1. andare sul sito dei [dati ARPA](https://dati.arpa.puglia.it/openapi/index.html)
      2. scorrere fino alla Sezione `Misurazioni`
      3. cliccare sul successivo tasto `GET`
