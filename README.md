@@ -168,7 +168,7 @@ Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia
 |111|Candela - Ex Comes|Candela|---|IL|PRIVATO|Foggia|IT|Italy|15.523055|41.173055|ARPAP
 |112|San Severo  - Municipio|San Severo|---|RRQA|PUBBLICO|Foggia|IT|Italy|15.379722|41.696944|ARPAP
 |113|Galatina-Colacem|Galatina|Contrada Piani|IL|PUBBLICO|Lecce|IT|Italy|18.192856|40.163964|ARPAP
-|114|C1 - Lato sud ovest impianti| Area imprese Brindisi|Zona industriale| Via Leonardo da Vinci|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.990417|40.628028|ARPAP
+|114|C1 - Lato sud ovest impianti| Area imprese Brindisi|Zona industriale - Via Leonardo da Vinci|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.990417|40.628028|ARPAP
 |115|C2 - Area bacino idrico|Brindisi Zona industriale - Via Giuseppe Verdi|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.988500|40.638889|ARPAP
 |116|C3 - Area impianto P1CR Cracking|Brindisi Zona industriale| Via Aldo Moro|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.998139|40.638139|ARPAP
 |117|C4 - Area impianto Butadiene|Brindisi Zona industriale |Via Enrico Fermi|VERSALIS|PRIVATO|Brindisi|IT|Italy|18.002444|40.634444|ARPAP
