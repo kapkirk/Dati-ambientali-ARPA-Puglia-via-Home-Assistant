@@ -463,9 +463,9 @@ ovviamente poi modificheremo anche il successivo messaggio di  `return` del _pay
           return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9];` 
 ```
 
-in questo modo avremo una uscita per ogni inquinante a cui collegheremo, nello stesso ordine mostrato dall`API, il canale MQTT tramite il nodo `mqtt out`. I nodi, per maggiore chiarezza e celerità, li ho denominati così come previsto dalla sigla breve utilizzata nella stessa API regionale.
+in questo modo avremo una uscita per ogni inquinante a cui collegheremo, nello stesso ordine mostrato dall'`API`, il canale MQTT tramite il nodo `mqtt out`. I nodi, per maggiore chiarezza e celerità, li ho denominati così come previsto dalla sigla breve utilizzata nella stessa API regionale.
 6. Prima di arrivare alla pubblicazione del dato in `MQTT` ho dovuto inserire un nuovo nodo `function` denominato `formatta in valore "valore" in caso di errore` che ha lo scopo di sostituire i dati non pervenuti, esposti dalle API con la dicitura `null`, con il numero `0`. Questo si è reso necessario perchè altrimenti Home Assistant non è in grado di interpetrare il dato restituendo così un errore generale del sensore che non esporrà nulla.
-7. L`ultima cosa è quindi la configurazione dei relativi sensori in Home Assistant, la struttura è identica per tutti, va cambiato solo il nome del sensore nel campo `name` ed il canale mqtt nel campo `json_attributes_topic:`, null`altro:
+7. L'ultima cosa è quindi la configurazione dei relativi sensori in Home Assistant, la struttura è identica per tutti, va cambiato solo il nome del sensore nel campo `name` ed il canale mqtt nel campo `json_attributes_topic:`, null`altro:
 
  ```yaml
 
