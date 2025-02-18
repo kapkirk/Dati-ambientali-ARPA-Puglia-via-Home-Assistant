@@ -34,7 +34,7 @@ Una utility [Home Assistant](https://home-assistant.io/) che ti aiuta a visualiz
 
 Scopo principale di queste righe è quello di automatizzare l`acquisizione giornaliera di dati ambientali pubblicati tramite API dalla Agenzia Regionale Protezione e Prevenzione Ambientale per la Puglia, la loro elaborazione tramite Node-RED e la successiva integrazione in Home Assistant tramite pubblicazione MQTT per la visualizzazione in tempo reale.
 
-Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia.it/pagina2795_aria.html) secondo la [mappa](https://dati.arpa.puglia.it/qaria?footer=false%EF%BB%BF) ed i dati utilizzati sono forniti da ARPA Puglia e rileasciati con licenza Creative Commons Attribution 4.0 International [(CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.it). 
+Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia.it/pagina2795_aria.html) secondo la [mappa](https://dati.arpa.puglia.it/qaria?footer=false%EF%BB%BF) ed i dati utilizzati sono forniti da ARPA Puglia e rileasciati con licenza [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.it). 
 
 ---
 
