@@ -169,9 +169,9 @@ Tutte le info sono disponibili sul sito di [ARPA Puglia](https://www.arpa.puglia
 |112|San Severo  - Municipio|San Severo|---|RRQA|PUBBLICO|Foggia|IT|Italy|15.379722|41.696944|ARPAP
 |113|Galatina-Colacem|Galatina|Contrada Piani|IL|PUBBLICO|Lecce|IT|Italy|18.192856|40.163964|ARPAP
 |114|C1 - Lato sud ovest impianti| Area imprese Brindisi|Zona industriale| Via Leonardo da Vinci|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.990417|40.628028|ARPAP
-|115|C2 - Area bacino idrico|Brindisi Zona industriale| Via Giuseppe Verdi|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.988500|40.638889|ARPAP
+|115|C2 - Area bacino idrico|Brindisi Zona industriale - Via Giuseppe Verdi|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.988500|40.638889|ARPAP
 |116|C3 - Area impianto P1CR Cracking|Brindisi Zona industriale| Via Aldo Moro|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.998139|40.638139|ARPAP
-|117|C4 - Area impianto Butadiene|Brindisi Zona industriale Via Enrico Fermi|VERSALIS|PRIVATO|Brindisi|IT|Italy|18.002444|40.634444|ARPAP
+|117|C4 - Area impianto Butadiene|Brindisi Zona industriale |Via Enrico Fermi|VERSALIS|PRIVATO|Brindisi|IT|Italy|18.002444|40.634444|ARPAP
 |118|C5 - Area Pontile|Brindisi Zona industriale| Via Galileo Galilei|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.989981|40.645450|ARPAP
 |119|C6 - Area PE1/2 lato sud impianti|Brindisi Zona industriale| Via Alessandro Volta|VERSALIS|PRIVATO|Brindisi|IT|Italy|18.001614|40.623753|ARPAP
 
