@@ -430,15 +430,15 @@ codice:
 formatParam: CSV
 === measurements/executeQuery ===
 <pre>data_di_misurazione,id_station,denominazione,comune,provincia,Longitude,Latitude,tipologia_di_area,tipologia_di_stazione,rete,interesse_rete,id_pollutant,inquinante_misurato,valore_inquinante_misurato,limite,unita_misura,superamenti,indice_qualita,classe_qualita
-2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,---,---,"ADI","PRIVATO","13","PM10",---,---,"µg/m³",---,---,---
-2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,---,---,"ADI","PRIVATO","12","PM2.5",---,---,"µg/m³",---,---,---
-2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,---,---,"ADI","PRIVATO","4","NO2",---,---,"µg/m³",---,---,---
-2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,---,---,"ADI","PRIVATO","2","C6H6",---,---,"µg/m³",---,---,---
-2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,---,---,"ADI","PRIVATO","1","CO",---,---,"mg/m³",---,---,---
-2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,---,---,"ADI","PRIVATO","6","SO2",---,---,"µg/m³",---,---,---
-2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,---,---,"ADI","PRIVATO","8","H2S",---,---,"µg/m³",---,---,---
-2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,---,---,"ADI","PRIVATO","10","BLACK CARB",---,---,"ng/m³",---,---,---
-2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,---,---,"ADI","PRIVATO","11","IPA",---,---,"ng/m³",---,---,---
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","13","PM10",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","12","PM2.5",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","4","NO2",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","2","C6H6",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","1","CO",null,null,"mg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","6","SO2",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","8","H2S",null,null,"µg/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","10","BLACK CARB",null,null,"ng/m³",null,null,null
+2025-01-28,104,"Meteo Parchi","Taranto","Taranto",17.222180,40.496730,null,null,"ADI","PRIVATO","11","IPA",null,null,"ng/m³",null,null,null
 ```
 
    
@@ -464,8 +464,8 @@ ovviamente poi modificheremo anche il successivo messaggio di  `return` del _pay
 ```
 
 in questo modo avremo una uscita per ogni inquinante a cui collegheremo, nello stesso ordine mostrato dall`API, il canale MQTT tramite il nodo `mqtt out`. I nodi, per maggiore chiarezza e celerità, li ho denominati così come previsto dalla sigla breve utilizzata nella stessa API regionale.
-6. Prima di arrivare alla pubblicazione del dato in `MQTT` ho dovuto inserire un nuovo nodo `function` denominato `formatta in valore "valore" in caso di errore` che ha lo scopo di sostituire i dati non pervenuti, esposti dalle API con la dicitura `---`, con il numero `0`. Questo si è reso necessario perchè altrimenti Home Assistant non è in grado di interpetrare il dato restituendo così un errore generale del sensore che non esporrà ---a.
-7. L`ultima cosa è quindi la configurazione dei relativi sensori in Home Assistant, la struttura è identica per tutti, va cambiato solo il nome del sensore nel campo `name` ed il canale mqtt nel campo `json_attributes_topic:`, ---`altro:
+6. Prima di arrivare alla pubblicazione del dato in `MQTT` ho dovuto inserire un nuovo nodo `function` denominato `formatta in valore "valore" in caso di errore` che ha lo scopo di sostituire i dati non pervenuti, esposti dalle API con la dicitura `null`, con il numero `0`. Questo si è reso necessario perchè altrimenti Home Assistant non è in grado di interpetrare il dato restituendo così un errore generale del sensore che non esporrà nulla.
+7. L`ultima cosa è quindi la configurazione dei relativi sensori in Home Assistant, la struttura è identica per tutti, va cambiato solo il nome del sensore nel campo `name` ed il canale mqtt nel campo `json_attributes_topic:`, null`altro:
 
  ```yaml
 
