@@ -592,7 +592,7 @@ All info is available on the website of [ARPA Puglia](https://www.arpa.puglia.it
 
 1. As already mentioned, the data are acquired through the public APIs made available by ARPA. The available control units (as of 29.1.2025) are as follows:
 
-|id_station|             Name |                       municipality | address |network |interesse_rete|state |   Country |paese_esteso |  Latitude |Longitude |    Source |
+|id_station|             denominazione                                |                       comune    | indirizzo               |rete   |interesse_rete|provincia    |   paese   |paese_esteso  |  Latitude    |Longitude     |    sorgente  |
 | -------- | -------------------------------------------------------- | ------------------------------- | ----------------------- | ----- | ------------ | ----------- | --------- | ------------ | ------------ | ------------ | ------------ |
 |8|Monte S. Angelo - Ciuffreda|Monte Sant Angelo|Suolo Ciuffreda|RRQA|PUBBLICO|Foggia|IT|Italy|15.945254|41.666109|ARPAP
 |10|Manfredonia - Mandorli|Manfredonia|Via dei Mandorli|RRQA|PUBBLICO|Foggia|IT|Italy|15.909638|41.629333|ARPAP
@@ -602,7 +602,7 @@ All info is available on the website of [ARPA Puglia](https://www.arpa.puglia.it
 |19|Taranto - Archimede|Taranto|Via Archimede|RRQA|PUBBLICO|Taranto|IT|Italy|17.233048|40.494441|ARPAP
 |20|Taranto - Machiavelli|Taranto|Via Machiavelli|RRQA|PUBBLICO|Taranto|IT|Italy|17.225823|40.488608|ARPAP
 |21|Taranto - San Vito|Taranto|presso Colonia Marina|RRQA|PUBBLICO|Taranto|IT|Italy|17.225272|40.423328|ARPAP
-|22|Taranto - Alto Adige|Taranto|Via Alto Adige| presso scuola XX Circolo|RRQA|PUBBLICO|Taranto|IT|Italy|17.263602|40.460553|ARPAP
+|22|Taranto - Alto Adige|Taranto|Via Alto Adige presso scuola XX Circolo|RRQA|PUBBLICO|Taranto|IT|Italy|17.263602|40.460553|ARPAP
 |23|Mesagne - Via Udine|Mesagne|Via Udine|RRQA|PUBBLICO|Brindisi|IT|Italy|17.807998|40.565995|ARPAP
 |24|Brindisi - Via Taranto|Brindisi|Via Taranto|RRQA|PUBBLICO|Brindisi|IT|Italy|17.947777|40.634166|ARPAP
 |25|San Pancrazio|San Pancrazio Salentino|---|RRQA|PUBBLICO|Brindisi|IT|Italy|17.845999|40.422993|ARPAP
@@ -620,21 +620,21 @@ All info is available on the website of [ARPA Puglia](https://www.arpa.puglia.it
 |41|Grottaglie|Grottaglie|via XXV luglio|RRQA|PUBBLICO|Taranto|IT|Italy|17.423879|40.537776|ARPAP
 |42|Martina Franca|Martina Franca|Via della Stazione|RRQA|PUBBLICO|Taranto|IT|Italy|17.331939|40.700826|ARPAP
 |47|Lecce - Garigliano|Lecce|---|RRQA|PUBBLICO|Lecce|IT|Italy|18.174327|40.364457|ARPAP
-|49|Maglie|Maglie|Via Don. L. Sturzo| 4|IL|PUBBLICO|Lecce|IT|Italy|18.294098|40.123636|ARPAP
+|49|Maglie|Maglie|Via Don. L. Sturzo 4|---|PUBBLICO|Lecce|IT|Italy|18.294098|40.123636|ARPAP
 |50|Galatina - I.T.C.  La Porta |Galatina|Viale degli studenti|RRQA|PUBBLICO|Lecce|IT|Italy|18.174725|40.166947|ARPAP
 |51|Campi Salentina|Campi Salentina|Via Napoli|RRQA|PUBBLICO|Lecce|IT|Italy|18.026509|40.397507|ARPAP
 |54|Bari - Cavour|Bari|Corso Cavour|RRQA|PUBBLICO|Bari|IT|Italy|16.872552|41.122269|ARPAP
 |55|Bari - Kennedy|Bari|Piazza R. Kennedy|RRQA|PUBBLICO|Bari|IT|Italy|16.858905|41.099593|ARPAP
-|62|Lecce - Libertini|Lecce|Piazza Libertini| Lecce|RRQA|PUBBLICO|Lecce|IT|Italy|18.176667|40.351945|ARPAP
+|62|Lecce - Libertini|Lecce|Piazza Libertini|RRQA|PUBBLICO|Lecce|IT|Italy|18.176667|40.351945|ARPAP
 |63|Andria - Vaccina|Andria|Via Vaccina|RRQA|PUBBLICO|BAT|IT|Italy|16.303939|41.233278|ARPAP
-|64|Altamura - Via Santeramo|Altamura|Via Golgota| Altamura|RRQA|PUBBLICO|Bari|IT|Italy|16.561015|40.828848|ARPAP
+|64|Altamura - Via Santeramo|Altamura|Via Golgota|RRQA|PUBBLICO|Bari|IT|Italy|16.561015|40.828848|ARPAP
 |65|Casamassima - LaPenna|Casamassima|Via Lapenna|RRQA|PUBBLICO|Bari|IT|Italy|16.920731|40.953154|ARPAP
 |66|Monopoli - Aldo Moro|Monopoli|Viale Aldo Moro|RRQA|PUBBLICO|Bari|IT|Italy|17.290285|40.951167|ARPAP
 |67|Brindisi - Terminal Passeggeri|Brindisi|presso Terninal Passeggeri sulla banchina portuale di Costa Morena|RRQA|PUBBLICO|Brindisi|IT|Italy|17.961687|40.647432|ARPAP
 |71|Barletta - Casardi|Barletta|via Casardi|RRQA|PUBBLICO|BAT|IT|Italy|16.286111|41.316666|ARPAP
 |72|Francavilla Fontana|Francavilla Fontana|Via Fabio Filzi|RRQA|PUBBLICO|Brindisi|IT|Italy|17.588331|40.529163|ARPAP
 |75|Massafra|Massafra|Via Frappietri|RRQA|PUBBLICO|Taranto|IT|Italy|17.116690|40.593761|ARPAP
-|76|Foggia - Rosati|Foggia|Via Giuseppe Rosati| 139|RRQA|PUBBLICO|Foggia|IT|Italy|15.548611|41.455555|ARPAP
+|76|Foggia - Rosati|Foggia|Via Giuseppe Rosati 139|RRQA|PUBBLICO|Foggia|IT|Italy|15.548611|41.455555|ARPAP
 |77|Brindisi - Perrino|Brindisi|Via Crati|RRQA|PUBBLICO|Brindisi|IT|Italy|17.954778|40.631361|ARPAP
 |78|Brindisi - Cappuccini|Brindisi|Via Cappuccini|IL|PUBBLICO|Brindisi|IT|Italy|17.921778|40.630917|ARPAP
 |81|Bari - Carbonara|Bari|via Loguercio|RRQA|PUBBLICO|Bari|IT|Italy|16.866944|41.076666|ARPAP
@@ -645,7 +645,7 @@ All info is available on the website of [ARPA Puglia](https://www.arpa.puglia.it
 |94|Torchiarolo-Lendinuso|Torchiarolo|C.da MONTEVACCARO SN - 72020 TORCHIAROLO      |IL|PUBBLICO|Brindisi|IT|Italy|18.078880|40.517502|ARPAP
 |95|Surbo - Croce |Surbo|Via B. Croce  S.N. - 73010 SURBO    |RRQA|PUBBLICO|Lecce|IT|Italy|18.120835|40.411940|ARPAP
 |96|Ceglie Messapica|Ceglie Messapica|via Martina  (Scuola Elementare Papa Giovanni XXIII )|RRQA|PUBBLICO|Brindisi|IT|Italy|17.512500|40.649166|ARPAP
-|97|Modugno - EN02|Modugno|Viale delle Magnolie| 6|RRQA|PUBBLICO|Bari|IT|Italy|16.766111|41.107777|ARPAP
+|97|Modugno - EN02|Modugno|Viale delle Magnolie 6|RRQA|PUBBLICO|Bari|IT|Italy|16.766111|41.107777|ARPAP
 |98|Modugno - EN03|Modugno|Via Maranda|RRQA|PUBBLICO|Bari|IT|Italy|16.781672|41.087222|ARPAP
 |99|Modugno - EN04|Modugno|Via Ancona|RRQA|PUBBLICO|Bari|IT|Italy|16.787777|41.114444|ARPAP
 |100|Cokeria|Taranto|---|ADI|PRIVATO|ILVA|IT|Italy|17.217630|40.502050|ARPAP
@@ -662,13 +662,12 @@ All info is available on the website of [ARPA Puglia](https://www.arpa.puglia.it
 |111|Candela - Ex Comes|Candela|---|IL|PRIVATO|Foggia|IT|Italy|15.523055|41.173055|ARPAP
 |112|San Severo  - Municipio|San Severo|---|RRQA|PUBBLICO|Foggia|IT|Italy|15.379722|41.696944|ARPAP
 |113|Galatina-Colacem|Galatina|Contrada Piani|IL|PUBBLICO|Lecce|IT|Italy|18.192856|40.163964|ARPAP
-|114|C1 - Lato sud ovest impianti| Area imprese|Brindisi|Zona industriale| Via Leonardo da Vinci|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.990417|40.628028|ARPAP
-|115|C2 - Area bacino idrico|Brindisi|Zona industriale| Via Giuseppe Verdi|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.988500|40.638889|ARPAP
-|116|C3 - Area impianto P1CR Cracking|Brindisi|Zona industriale| Via Aldo Moro|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.998139|40.638139|ARPAP
-|117|C4 - Area impianto Butadiene|Brindisi|Zona industriale| Via Enrico Fermi|VERSALIS|PRIVATO|Brindisi|IT|Italy|18.002444|40.634444|ARPAP
-|118|C5 - Area Pontile|Brindisi|Zona industriale| Via Galileo Galilei|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.989981|40.645450|ARPAP
-|119|C6 - Area PE1/2 lato sud impianti|Brindisi|Zona industriale| Via Alessandro Volta|VERSALIS|PRIVATO|Brindisi|IT|Italy|18.001614|40.623753|ARPAP
-
+|114|C1 - Lato sud ovest impianti| Area imprese Brindisi|Zona industriale - Via Leonardo da Vinci|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.990417|40.628028|ARPAP
+|115|C2 - Area bacino idrico|Brindisi Zona industriale | Via Giuseppe Verdi|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.988500|40.638889|ARPAP
+|116|C3 - Area impianto P1CR Cracking|Brindisi Zona industriale| Via Aldo Moro|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.998139|40.638139|ARPAP
+|117|C4 - Area impianto Butadiene|Brindisi Zona industriale |Via Enrico Fermi|VERSALIS|PRIVATO|Brindisi|IT|Italy|18.002444|40.634444|ARPAP
+|118|C5 - Area Pontile|Brindisi Zona industriale| Via Galileo Galilei|VERSALIS|PRIVATO|Brindisi|IT|Italy|17.989981|40.645450|ARPAP
+|119|C6 - Area PE1/2 lato sud impianti|Brindisi Zona industriale| Via Alessandro Volta|VERSALIS|PRIVATO|Brindisi|IT|Italy|18.001614|40.623753|ARPAP
 
 1. The identification of the `id_station` is of particular importance because it will be, in fact, the only data to be modified in the data reading string.
 1. The read string is as follows:
