@@ -1,5 +1,7 @@
 {
-  "name": "Dati ambientali ARPA Puglia via Home Assistant",
+  "name": "Dati ambientali ARPA Puglia",
   "render_readme": true,
   "country": "IT",
+  "homeassistant": "0.99.9",
+  "persistent_directory": "userfiles"
 }
