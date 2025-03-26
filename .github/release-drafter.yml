@@ -10,11 +10,11 @@ on:
 
 
   jobs:
-     validate-hacs:
-        runs-on: "ubuntu-latest"
-        name: With HACS Action
-        steps:
-          - name: ✅ HACS validation
-            uses: "hacs/action@main"
-            with:
-              category: "template"
+    validate-hacs:
+      runs-on: "ubuntu-latest"
+      name: With HACS Action
+      steps:
+         - name: ✅ HACS validation
+           uses: "hacs/action@main"
+           with:
+             category: "template"
