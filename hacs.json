@@ -3,5 +3,7 @@
   "render_readme": true,
   "country": "IT",
   "homeassistant": "0.99.9",
-  "persistent_directory": "userfiles"
+  "filename": "awesome.jinja",
+  "homeassistant": "2024.1.0",
+
 }
